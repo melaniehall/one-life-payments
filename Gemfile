@@ -2,12 +2,17 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.17'
 gem 'devise'
+gem 'money'
+gem 'money-rails'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'simple_form'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do
 	gem 'sqlite3'
+	gem 'dotenv'
 end
 
 group :production do
