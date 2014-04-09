@@ -31,10 +31,10 @@
 
   <div class="form-row">
     <label>
-      <span>Amount</span>
       <%= f.input :amount %>
     </label>
   </div>
-
+  <%= f.input :monthly, :label => "I want to give monthly" %>
+  <%= hidden_field_tag :sender_id, params[:sender_id], :value => "Melanie" %>
   <button type="submit">Submit Payment</button>
 <% end %>

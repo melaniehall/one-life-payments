@@ -1,8 +1,9 @@
 OneLifePayments::Application.routes.draw do
 
-  devise_for :users 
+  devise_for :users
 
   resources :contributions
+  resources :donors
 
   root to: "home#index"
 
