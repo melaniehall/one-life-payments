@@ -13,6 +13,7 @@ gem 'simple_form'
 group :development, :test do
 	gem 'sqlite3'
 	gem 'dotenv'
+  gem 'pry-rails'
 end
 
 group :production do

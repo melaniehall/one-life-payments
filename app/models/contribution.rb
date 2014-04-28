@@ -1,22 +1,17 @@
 class Contribution < ActiveRecord::Base
 
-	belongs_to :user
-
   monetize :amount_cents
 
-  attr_writer :stripe_token
   attr_writer :stripe_currency
 
-  attr_accessible :amount, :amount_cents, :stripe_token, :stripe_currency, :monthly
+  attr_accessible :amount, :amount_cents, :stripe_token, :stripe_currency,
+                  :monthly, :stripe_id, :first_name, :last_name, :email, :contributor_id
 
+  validates_presence_of :email, :first_name, :last_name
   def process_payment
     if self.user.stripe_customer_id
       # they already have a subscription or have made a onetime gift.
       customer_id = self.user.stripe_customer_id
-
-      # check our db to see if they have a subscription
-
-      # cancel it... make a new one...
 
     else
       customer = Stripe::Customer.create(
@@ -33,35 +28,48 @@ class Contribution < ActiveRecord::Base
     false
   end
 
+  def process_monthly_gift
+    create_plan_and_process_payment
+  end
+
   def process_one_time_gift
-    if self.user.stripe_customer_id
-      # they already have a subscription or have made a onetime gift.
-      customer_id = self.user.stripe_customer_id
-    else
-      customer_id = customer.id
-      self.user.update_attributes(:stripe_customer_id => customer_id)
-    end
-    charge = Stripe::Charge.create(amount: amount_cents,
-                                   currency: @stripe_currency,
-                                   :customer => customer_id,
-                                   description: "This is the description.")
-    true
+    response = Stripe::Charge.create(
+      :amount => amount_cents,
+      :currency => "usd",
+      :description => self.email,
+      :metadata => {
+        :first_name => self.first_name,
+        :last_name => self.last_name
+      },
+      :card => stripe_token
+    )
+
+    save
+
+    assign_contributor
     rescue Stripe::CardError
       false
   end
 
-  def set_customer_id
-    if self.user.stripe_customer_id
+  def set_customer_id stripe_token
+    contributor = assign_contributor
+    if contributor.stripe_customer_id
       # they already have a subscription or have made a onetime gift.
-      customer_id = self.user.stripe_customer_id
+      customer_id = contributor.stripe_customer_id
     else
+      customer = Stripe::Customer.create(
+        :card => stripe_token,
+        :description => self.email
+      )
+
       customer_id = customer.id
-      self.user.update_attributes(:stripe_customer_id => customer_id)
+      contributor.update_attributes(:stripe_customer_id => customer_id)
+      customer_id
     end
   end
 
   def create_plan amount, name, id_name
-    Stripe::Plan.create(
+    plan = Stripe::Plan.create(
       :amount => amount_cents,
       :interval => 'month',
       :name => name,
@@ -70,20 +78,38 @@ class Contribution < ActiveRecord::Base
     )
   end
 
+  def create_subscription customer_id, plan_name
+    customer = Stripe::Customer.retrieve(customer_id)
+    customer.subscriptions.create(:plan => plan_name)
+  end
+
   def create_plan_and_process_payment
     amount = amount_cents
-    customer_id = set_customer_id
-    name = "#{customer_id} + #{amount_cents}"
+    customer_id = set_customer_id stripe_token
+    name = "#{customer_id}-#{amount_in_dollars(amount_cents)}"
     id_name = name
-    create_plan(amount, name, id_name)
-      customer = Stripe::Customer.create(
-        :card => @stripe_token,
-        :description => self.user.email,
-        :plan => name
-      )
-
+    plan = create_plan(amount, name, id_name)
+    create_subscription customer_id, name
     rescue Stripe::CardError
       false
+  end
+
+  def amount_in_dollars amount_cents
+    (amount_cents.to_i / 100).to_s
+  end
+
+  private
+
+  def assign_contributor
+    @contributor = Contributor.find_by_email(self.email)
+    if @contributor.present?
+      self.update_attributes(:contributor_id => @contributor.id)
+      @contributor
+    else
+      @new_contributor = Contributor.create(email: self.email, first_name: self.first_name, last_name: self.last_name)
+      self.update_attributes(:contributor_id => @new_contributor.id)
+      @new_contributor
+    end
   end
 
 end

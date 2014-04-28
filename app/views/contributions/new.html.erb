@@ -6,6 +6,12 @@
 <%= simple_form_for @contribution do |f| %>
   <span class="payment-errors"></span>
 
+  <%= label_tag "First Name"%>
+  <%= f.text_field :first_name, required: true %><br>
+  <%= label_tag "Last Name"%>
+  <%= f.text_field :last_name, required: true %>
+  <%= f.input :email, required: true %>
+
   <div class="form-row">
     <label>
       <span>Card Number</span>
@@ -35,6 +41,6 @@
     </label>
   </div>
   <%= f.input :monthly, :label => "I want to give monthly" %>
-  <%= hidden_field_tag :sender_id, params[:sender_id], :value => "Melanie" %>
+
   <button type="submit">Submit Payment</button>
 <% end %>

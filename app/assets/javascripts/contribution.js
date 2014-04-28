@@ -7,9 +7,9 @@ var stripeResponseHandler = function(status, response) {
 	  $form.find('button').prop('disabled', false);
 	} else {
 	  var token = response.id;
-	  var currency = response.currency || 'USD';
+  	// var currency = response.currency || 'USD';
 	  $form.append($('<input type="hidden" name="contribution[stripe_token]" />').val(token));
-	  $form.append($('<input type="hidden" name="contribution[stripe_currency]" />').val(currency));
+	  // $form.append($('<input type="hidden" name="contribution[stripe_currency]" />').val(currency));
 	  // and re-submit
 	  $form.get(0).submit();
 	}
