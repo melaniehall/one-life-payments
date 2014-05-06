@@ -5,7 +5,9 @@ class Contribution < ActiveRecord::Base
   attr_writer :stripe_currency
 
   attr_accessible :amount, :amount_cents, :stripe_token, :stripe_currency,
-                  :monthly, :stripe_id, :first_name, :last_name, :email, :contributor_id
+                  :monthly, :stripe_id, :first_name, :last_name, :email, :contributor_id,
+                  :address_line1, :address_line2, :address_city, :address_state, :address_zip,
+                  :address_country
 
   validates_presence_of :email, :first_name, :last_name
 

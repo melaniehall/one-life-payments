@@ -7,11 +7,15 @@
   <div class="validation-errors"></div>
   <span class="payment-errors"></span>
 
-  <%= label_tag "First Name"%>
-  <%= f.text_field :first_name, required: true, class: "first_name_value" %><br>
-  <%= label_tag "Last Name"%>
-  <%= f.text_field :last_name, required: true, class: "last_name_value" %>
-  <%= f.input :email, required: true, class: "email_address_value" %>
+  <%= f.input :first_name, required: true, class: "first_name_value" %><br>
+  <%= f.input :last_name, required: true, class: "last_name_value" %>
+  <%= f.input :email, class: "email_address_value" %>
+  <%= f.input :address_line1, label: "Address Line 1" %>
+  <%= f.input :address_line2, label: "Address Line 2" %>
+  <%= f.input :address_city, label: "City" %>
+  <%= f.input :address_state, label: "State" %>
+  <%= f.input :address_zip, label: "Zip Code" %>
+  <%= f.input :address_country, label: "Country" %>
 
   <div class="form-row">
     <label>

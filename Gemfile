@@ -6,6 +6,7 @@ gem 'money'
 gem 'money-rails'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'simple_form'
+gem 'country_select'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
