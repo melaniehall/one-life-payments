@@ -6,18 +6,10 @@ class ContributionsController < ApplicationController
 
   def create
     @contribution = Contribution.new(params[:contribution])
-    if params[:contribution][:monthly] == "1"
-      if @contribution.create_plan_and_process_payment
-        redirect_to root_path, :flash => { :notice => "Payment accepted" }
-      else
-         render :new, :error => { :notice => "Your donation was not accepted" }
-      end
+    if @contribution.process_payment
+      redirect_to root_path, :flash => { :notice => "Your donation was accepted" }
     else
-      if @contribution.process_one_time_gift
-        redirect_to root_path, :flash => { :notice => "Payment accepted" }
-      else
-        render :new, :error => { :notice => "Your donation was not accepted" }
-      end
+      render :new, :flash => { :error => "Your donation was not accepted" }
     end
   end
 

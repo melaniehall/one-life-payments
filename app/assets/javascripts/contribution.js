@@ -9,17 +9,36 @@ var stripeResponseHandler = function(status, response) {
 	  var token = response.id;
   	// var currency = response.currency || 'USD';
 	  $form.append($('<input type="hidden" name="contribution[stripe_token]" />').val(token));
-	  // $form.append($('<input type="hidden" name="contribution[stripe_currency]" />').val(currency));
-	  // and re-submit
+
+	  clearInfo();
 	  $form.get(0).submit();
 	}
 };
 
-jQuery(function($) {
+function clearInfo(){
+	  $('#new_contribution input').each(function(){
+	  	console.log($(this));
+	  	if ($(this).data('stripe')){
+	  		$(this).val('');
+	  	}
+	  });
+};
+
+$(document).ready(function(){
 	$('#new_contribution').submit(function(e) {
-	  var $form = $(this);
-	  $form.find('button').prop('disabled', true);
-	  Stripe.createToken($form, stripeResponseHandler);
-	  return false;
+		var firstName = $('.first_name_value').val()
+		var lastName = $('.last_name_value').val()
+		var emailAddress = $('#contribution_email').val()
+
+		if (!firstName || !lastName || !emailAddress){
+			$('.validation-errors').html('*All fields are required')
+			clearInfo()
+			return false
+		}else{
+		  var $form = $(this);
+		  $form.find('button').prop('disabled', true);
+		  Stripe.createToken($form, stripeResponseHandler);
+		  return false;
+		}
 	});
 });

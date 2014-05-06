@@ -4,13 +4,14 @@
 <%= javascript_include_tag "contribution", "data-turbolinks-track" => false %>
 
 <%= simple_form_for @contribution do |f| %>
+  <div class="validation-errors"></div>
   <span class="payment-errors"></span>
 
   <%= label_tag "First Name"%>
-  <%= f.text_field :first_name, required: true %><br>
+  <%= f.text_field :first_name, required: true, class: "first_name_value" %><br>
   <%= label_tag "Last Name"%>
-  <%= f.text_field :last_name, required: true %>
-  <%= f.input :email, required: true %>
+  <%= f.text_field :last_name, required: true, class: "last_name_value" %>
+  <%= f.input :email, required: true, class: "email_address_value" %>
 
   <div class="form-row">
     <label>
