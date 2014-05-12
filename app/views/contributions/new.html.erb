@@ -7,9 +7,9 @@
   <div class="validation-errors"></div>
   <span class="payment-errors"></span>
 
-  <%= f.input :first_name, required: true, class: "first_name_value" %><br>
-  <%= f.input :last_name, required: true, class: "last_name_value" %>
-  <%= f.input :email, class: "email_address_value" %>
+  <%= f.input :first_name %><br>
+  <%= f.input :last_name %>
+  <%= f.input :email %>
   <%= f.input :address_line1, label: "Address Line 1" %>
   <%= f.input :address_line2, label: "Address Line 2" %>
   <%= f.input :address_city, label: "City" %>
@@ -46,6 +46,7 @@
     </label>
   </div>
   <%= f.input :monthly, :label => "I want to give monthly" %>
+  <%= f.input :gift_designation, :as => :select, :collection => ["Khalpar", "Ghoraghata", "Katapakur", "Nalpur"], :include_blank => "Use my gift wherever it is most needed" %>
 
   <button type="submit">Submit Payment</button>
 <% end %>

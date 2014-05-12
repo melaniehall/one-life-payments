@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140506010553) do
+ActiveRecord::Schema.define(:version => 20140506014420) do
 
   create_table "contributions", :force => true do |t|
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.integer  "amount_cents"
     t.integer  "user_id"
     t.string   "stripe_token"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20140506010553) do
     t.string   "address_state"
     t.string   "address_zip"
     t.string   "address_country"
+    t.string   "gift_designation"
   end
 
   create_table "contributors", :force => true do |t|

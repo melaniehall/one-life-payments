@@ -7,7 +7,7 @@ class Contribution < ActiveRecord::Base
   attr_accessible :amount, :amount_cents, :stripe_token, :stripe_currency,
                   :monthly, :stripe_id, :first_name, :last_name, :email, :contributor_id,
                   :address_line1, :address_line2, :address_city, :address_state, :address_zip,
-                  :address_country
+                  :address_country, :gift_designation
 
   validates_presence_of :email, :first_name, :last_name
 
@@ -26,7 +26,14 @@ class Contribution < ActiveRecord::Base
       :description => self.email,
       :metadata => {
         :first_name => self.first_name,
-        :last_name => self.last_name
+        :last_name => self.last_name,
+        :address_line1 => self.address_line1,
+        :address_line2 => self.address_line2,
+        :address_city => self.address_city,
+        :address_state => self.address_state,
+        :address_zip => self.address_zip,
+        :address_country => self.address_country,
+        :gift_designation => self.gift_designation
       },
       :card => stripe_token
     )
@@ -46,7 +53,18 @@ class Contribution < ActiveRecord::Base
     else
       customer = Stripe::Customer.create(
         :card => stripe_token,
-        :description => self.email
+        :description => self.email,
+        :metadata => {
+          :first_name => self.first_name,
+          :last_name => self.last_name,
+          :address_line1 => self.address_line1,
+          :address_line2 => self.address_line2,
+          :address_city => self.address_city,
+          :address_state => self.address_state,
+          :address_zip => self.address_zip,
+          :address_country => self.address_country,
+          :gift_designation => self.gift_designation
+        }
       )
 
       customer_id = customer.id
