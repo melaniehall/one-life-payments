@@ -3,50 +3,66 @@
 
 <%= javascript_include_tag "contribution", "data-turbolinks-track" => false %>
 
-<%= simple_form_for @contribution do |f| %>
-  <div class="validation-errors"></div>
-  <span class="payment-errors"></span>
-
-  <%= f.input :first_name %><br>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
-  <%= f.input :address_line1, label: "Address Line 1" %>
-  <%= f.input :address_line2, label: "Address Line 2" %>
-  <%= f.input :address_city, label: "City" %>
-  <%= f.input :address_state, label: "State" %>
-  <%= f.input :address_zip, label: "Zip Code" %>
-  <%= f.input :address_country, label: "Country" %>
-
-  <div class="form-row">
-    <label>
-      <span>Card Number</span>
-      <input type="text" size="20" data-stripe="number"/>
-    </label>
+  <div class="container page-header-block">
   </div>
+<div class="container" id="contribution-new">
 
-  <div class="form-row">
-    <label>
-      <span>CVC</span>
-      <input type="text" size="4" data-stripe="cvc"/>
-    </label>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= simple_form_for @contribution do |f| %>
+        <div class="validation-errors"></div>
+        <span class="payment-errors"></span>
+
+        <div class="form-row donation-information">
+          <%= f.input :amount %>
+
+          <%= f.input :monthly, :label => "I want to give monthly" %>
+
+          <%= f.input :gift_designation, :as => :select, :collection => ["Khalpar", "Ghoraghata", "Katapakur", "Nalpur"], :include_blank => "Use my gift wherever it is most needed" %>
+        </div>
+
+         <div class="form-row card-information">
+          <label>
+            <span>Card Number</span>
+          </label>
+          <input class="card-number" type="text" size="20" data-stripe="number"/>
+                    <label>
+            <span>Expiration (MM/YYYY)</span>
+          </label>
+
+          <input class="exp-month" type="text" size="2" data-stripe="exp-month"/>
+          <span> / </span>
+          <input class="exp-year" type="text" size="4" data-stripe="exp-year"/>
+          <label class="cvc-label">
+            <span>CVC</span>
+          </label>
+          <input class="cvc-input" type="text" size="4" data-stripe="cvc"/>
+
+        </div>
+
+        <div class="form-row personal-information">
+          <div class="first-name-block">
+            <%= f.input :first_name, :label => "Full Name", :placeholder => "First Name"%>
+          </div>
+          <div class="last-name-block">
+            <%= f.input :last_name, :label => false, :placeholder => "Last Name" %>
+          </div>
+          <%= f.input :email %>
+          <%= f.input :address_line1, label: "Address Line 1" %>
+          <%= f.input :address_line2, label: "Address Line 2" %>
+          <div class="city-block">
+            <%= f.input :address_city, label: "City" %>
+          </div>
+          <div class="state-block">
+            <%= f.input :address_state, label: "State" %>
+          </div>
+          <div class="zip-block">
+            <%= f.input :address_zip, label: "Zip Code" %>
+          </div>
+        </div>
+
+        <button type="submit" class="submit">Submit Payment</button>
+      <% end %>
+    </div>
   </div>
-
-  <div class="form-row">
-    <label>
-      <span>Expiration (MM/YYYY)</span>
-      <input type="text" size="2" data-stripe="exp-month"/>
-    </label>
-    <span> / </span>
-    <input type="text" size="4" data-stripe="exp-year"/>
-  </div>
-
-  <div class="form-row">
-    <label>
-      <%= f.input :amount %>
-    </label>
-  </div>
-  <%= f.input :monthly, :label => "I want to give monthly" %>
-  <%= f.input :gift_designation, :as => :select, :collection => ["Khalpar", "Ghoraghata", "Katapakur", "Nalpur"], :include_blank => "Use my gift wherever it is most needed" %>
-
-  <button type="submit">Submit Payment</button>
-<% end %>
+</div>

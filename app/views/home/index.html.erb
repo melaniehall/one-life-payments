@@ -1,2 +1,33 @@
-<h1>One Life International</h1>
-<%= link_to "Donate Now", new_contribution_path %>
+<div class="container-fluid hero-block" id="home">
+  <div class="container intro-block">
+    <h1>Whole-life love</h1>
+    <p>At One Life International, we're committed to seeing communities thrive in areas of education, wellness, and job training.</p>
+    <a href="#" onclick="$('#what-we-do').scrollView();">Learn More</a>
+    <!--<%= link_to "Donate Now", new_contribution_path %>-->
+  </div>
+</div>
+
+<div class="container" id="what-we-do">
+  <div class="strike-border" align="center">
+    <h2>One Life. Full Love.</h2>
+  </div>
+  <div class="intro-content">
+    <p>One Life International is a nonprofit organization that loves the poor
+    in Calcutta, India by providing resources and tools they need to
+    break out of poverty. Our programs offer opportunities for both kids and adults to grow themselves in every area of their life.</p>
+    <p>
+    Our staff of 32 Calcutta locals are actively involved in loving five communities throughout the city
+    and carry out work in three main areas: <em>wellness, education, and job training</em></p>
+  </div>
+  <div class="row" id="what-we-do-icons">
+    <div class="col-xs-12 col-sm-4">
+       <%= image_tag("wellness.png") %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+       <%= image_tag("education.png") %>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+       <%= image_tag("job-training.png") %>
+    </div>
+  </div>
+</div>

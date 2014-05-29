@@ -11,4 +11,169 @@
  *= require_self
  *= require bootstrap.min
  *= require_tree .
+ *= require application
  */
+
+.nav-block{
+  background: #414042;
+  color: #FFF;
+  position: relative;
+  height: 50px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, .3);
+}
+
+.header-logo{
+  position: absolute;
+  max-width: 180px;
+}
+
+.header-logo-2{
+  margin-top: 16px;
+  width: 280px;
+}
+
+.nav-block h4{
+  font-weight: 200;
+  letter-spacing: .1em;
+}
+
+.nav-links{
+  text-align: right;
+  margin-top: 15px;
+}
+
+.nav-links a{
+  color: #FFF;
+  margin-left: 10px;
+  letter-spacing: .1em;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  margin-left: 20px;
+}
+
+.nav-links a:hover{
+  color: #FFF;
+  text-decoration: none;
+  padding-bottom: 2.5px;
+  border-bottom: solid 3px #ba2f04;
+}
+
+.hero-block{
+  height: 700px;
+  display: block;
+}
+
+.hero-block#home{
+  background: url('closeup-girl.png') #FFF no-repeat left -160px;
+  background-size: 1820px
+}
+
+p.alert, p.notice{
+  position:absolute;
+}
+
+.intro-block{
+  margin: 130px auto;
+}
+
+.intro-block h1{
+  color: #FFF;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  font-size: 3em;
+  line-height: 1.25em;
+}
+
+.intro-block a{
+  background: #ba2f04;
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  padding-top: 8px;
+  color: #FFF;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-top: 10px;
+  text-align: center;
+  margin-right: 5px;
+  border: solid 2px transparent;
+}
+
+.intro-block a.learn-more{
+  background: none;
+  border: solid 2px #FFF;
+}
+
+.intro-block a:hover{
+  color: #FFF;
+  text-decoration: none;
+}
+
+.intro-block p{
+  color: #FFF;
+  font-size: "Lato", sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 24px;
+  max-width: 45%;
+}
+
+.strike-border {
+  background:url('strike-bg.jpg') center center repeat-x;
+  width:100%;
+  margin-top: 20px;
+}
+.strike-border h2 {
+  background-color:#ffffff;
+  display:inline-block;
+  padding:5px 15px 15px 15px;
+  font-size: 40px;
+  line-height: 38px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.intro-content p{
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  line-height:24px;
+  letter-spacing: .03em;
+}
+
+#what-we-do-icons{
+  margin-top: 20px;
+  margin-bottom: 200px;
+  text-align: center;
+}
+#what-we-do-icons img{
+  max-width: 200px;
+  margin: 0px auto;
+}
+
+.sub-nav{
+  background: #CCC;
+  height: 32px;
+  padding-top: 5px;
+  text-align: right;
+}
+
+.sub-nav a{
+  color: #414042;
+  width: auto;
+  display: inline-block;
+  margin-left: 20px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.sub-nav a:hover{
+  color: #FFF;
+  text-decoration: none;
+  background: none;
+}
+
+.sub-nav a.active{
+  font-weight: 800;
+}

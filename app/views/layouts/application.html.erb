@@ -5,10 +5,40 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+  <div class="nav-block">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-10 col-sm-5">
+          <a href="/">
+           <%= image_tag("oL_logo.png", :class => "header-logo") %>
+          </a>
+        </div>
+        <div class="col-xs-2 col-sm-7 nav-links">
+          <div class="hidden-xs">
+            <a href="#">OUR STORY</a>
+            <a href="#">WHAT WE DO</a>
+            <a href="../contributions/new">GIVE</a>
+            <a href="#">CONTACT US</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>
 	<%= yield %>
+  <script>
+    $.fn.scrollView = function () {
+        return this.each(function () {
+            $('html, body').animate({
+                scrollTop: $(this).offset().top
+            }, 1000);
+        });
+    }
+  </script>
 </body>
 </html>
