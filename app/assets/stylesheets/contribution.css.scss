@@ -48,7 +48,7 @@ body{
   box-sizing: border-box;
   cursor: pointer;
   -moz-box-shadow:    inset 0 0 1px #ccc;
-   -webkit-box-shadow: inset 0 0 1px #ccc;
+  -webkit-box-shadow: inset 0 0 1px #ccc;
    box-shadow:         inset 0 0 1px #ccc;
 }
 
@@ -119,6 +119,10 @@ body{
   margin-left: 120px;
 }
 
+#contribution-new button.submit.disabled{
+  opacity: .2;
+}
+
 #contribution-new input[type=text],
 input#contribution_gift_designation,
 input#contribution_email{
@@ -168,6 +172,33 @@ input#contribution_email{
   width: auto;
 }
 
+.validation-errors, .payment-errors{
+  text-align: center;
+  color: #ba2f04;
+}
+
+/*Thank You*/
+#thank-you-block{
+  margin-top: 100px;
+  text-align: center;
+}
+
+#contribution-new #errorExplanation h2,
+#contribution-new #errorExplanation p{
+  display: none;
+}
+
+#contribution-new #errorExplanation ul{
+  padding-left: 0px;
+  text-align: center;
+}
+
+#contribution-new #errorExplanation li{
+  padding-left: 0px;
+  margin-left: 0px;
+  list-style: none;
+  color: #ba2f04;
+}
 
 @media(max-width: 767px){
   #contribution-new button.submit{
@@ -230,4 +261,22 @@ input#contribution_email{
     font-size: 25px;
     line-height: 1.25em;
   }
+}
+
+.loading{
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+.loading .inner-content{
+  background: #CCC;
+  padding-top: 50px;
+  max-width: 250px;
+  margin: 0px auto;
+  height: 150px;
+  text-align: center;
+  color: red;
+  margin-top: 300px;
 }

@@ -10,8 +10,9 @@
   <div class="row">
     <div class="col-xs-12">
       <%= simple_form_for @contribution do |f| %>
+        <%= f.error_messages %>
         <div class="validation-errors"></div>
-        <span class="payment-errors"></span>
+        <div class="payment-errors"></div>
 
         <div class="form-row donation-information">
           <%= f.input :amount %>
@@ -64,5 +65,11 @@
         <button type="submit" class="submit">Submit Payment</button>
       <% end %>
     </div>
+  </div>
+</div>
+
+<div class="loading" style="display:none">
+  <div class="inner-content">
+    Processing
   </div>
 </div>

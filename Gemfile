@@ -7,6 +7,7 @@ gem 'money-rails'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'simple_form'
 gem 'country_select'
+gem 'dynamic_form'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -15,6 +16,7 @@ group :development, :test do
 	gem 'sqlite3'
 	gem 'dotenv'
   gem 'pry-rails'
+  gem 'rspec-rails'
 end
 
 group :production do

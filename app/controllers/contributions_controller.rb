@@ -7,9 +7,10 @@ class ContributionsController < ApplicationController
   def create
     @contribution = Contribution.new(params[:contribution])
     if @contribution.process_payment
-      redirect_to root_path, :flash => { :notice => "Your donation was accepted" }
+      redirect_to thank_you_path
     else
-      render :new, :flash => { :error => "Your donation was not accepted" }
+      #redirect_to card_errors_path
+      render :new
     end
   end
 

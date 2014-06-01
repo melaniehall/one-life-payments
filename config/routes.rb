@@ -6,7 +6,9 @@ OneLifePayments::Application.routes.draw do
   resources :donors
 
   root to: "home#index"
-
+  match '/thank_you' => 'contributions#thank_you', :via => :get
+  match '/card_errors' => 'contributions#card_errors', :via => :get
+  match '/programs' => 'home#programs', :via => :get
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

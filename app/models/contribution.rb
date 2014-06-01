@@ -11,6 +11,8 @@ class Contribution < ActiveRecord::Base
 
   validates_presence_of :email, :first_name, :last_name
 
+  validate :process_payment
+
   def process_payment
     if self.monthly?
       process_monthly_gift
@@ -20,6 +22,7 @@ class Contribution < ActiveRecord::Base
   end
 
   def process_one_time_gift
+    begin
     response = Stripe::Charge.create(
       :amount => amount_cents,
       :currency => "usd",
@@ -41,8 +44,19 @@ class Contribution < ActiveRecord::Base
     save
 
     assign_contributor
-    rescue Stripe::CardError
+    rescue => e
+      if e.message == 'Invalid positive integer'
+        errors.add('Your donation could not be processed:', "You've entered an invalid amount. Please try again.")
+      else
+        errors.add('Your donation could not be processed:', e.message + ". Please try again.")
+      end
+
       false
+    end
+    #rescue Stripe::CardError
+     # false
+    #rescue Stripe::InvalidRequestError => e
+     # logger.debug "************************Error: #{e.message}"
   end
 
   def set_customer_id stripe_token

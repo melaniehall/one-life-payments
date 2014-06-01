@@ -51,11 +51,21 @@
   margin-left: 20px;
 }
 
-.nav-links a:hover{
+.nav-links a:hover,
+
+.nav-links a.active{
   color: #FFF;
   text-decoration: none;
   padding-bottom: 2.5px;
   border-bottom: solid 3px #ba2f04;
+}
+
+a.red, .red{
+  color: #ba2f04;
+}
+
+a.red:hover{
+  color: #ba2f04;
 }
 
 .hero-block{
