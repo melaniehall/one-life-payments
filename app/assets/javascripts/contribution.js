@@ -24,15 +24,16 @@ function clearInfo(){
 };
 
 function revealLoading(){
+  $("html, body").animate({ scrollTop: 0 }, "slow");
  	$('.loading').fadeIn();
   var elem = $('.loading .inner-content');
   var count = 0;
    myCounter = setInterval(function () {
     count++;
     if (count < 3){
-      elem.append('.');
+      elem.append(' . ');
     }else{
-    	elem.html('Processing');
+    	elem.html("We're processing your donation<br>");
       count = 0;
     }
   }, 600);
@@ -42,7 +43,14 @@ function hideLoading(){
  	$('.loading').fadeOut();
 }
 
+function setModalHeight(){
+  var pageHeight = $('body').innerHeight();
+  $('.loading').css('height', pageHeight);
+}
+
 jQuery(function($) {
+  setModalHeight()
+
 	$('#new_contribution').submit(function(e) {
 		$('#errorExplanation').html("");
 		var firstName = $('#contribution_first_name').val()

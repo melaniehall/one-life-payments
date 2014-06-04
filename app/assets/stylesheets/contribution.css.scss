@@ -264,19 +264,21 @@ input#contribution_email{
 }
 
 .loading{
+  background: rgba(0, 0, 0, .7);
   position: absolute;
   width: 100%;
+  height: 100%;
   top: 0px;
   left: 0px;
 }
 
 .loading .inner-content{
-  background: #CCC;
   padding-top: 50px;
-  max-width: 250px;
+  max-width: 280px;
   margin: 0px auto;
   height: 150px;
   text-align: center;
-  color: red;
-  margin-top: 300px;
+  color: #FFF;
+  font-size: 30px;
+  margin-top: 250px;
 }

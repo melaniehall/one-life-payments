@@ -16,10 +16,7 @@
 
         <div class="form-row donation-information">
           <%= f.input :amount %>
-
           <%= f.input :monthly, :label => "I want to give monthly" %>
-
-          <%= f.input :gift_designation, :as => :select, :collection => ["Khalpar", "Ghoraghata", "Katapakur", "Nalpur"], :include_blank => "Use my gift wherever it is most needed" %>
         </div>
 
          <div class="form-row card-information">
@@ -27,7 +24,7 @@
             <span>Card Number</span>
           </label>
           <input class="card-number" type="text" size="20" data-stripe="number"/>
-                    <label>
+          <label>
             <span>Expiration (MM/YYYY)</span>
           </label>
 
@@ -70,6 +67,6 @@
 
 <div class="loading" style="display:none">
   <div class="inner-content">
-    Processing
+    We're processing your donation<br>
   </div>
 </div>

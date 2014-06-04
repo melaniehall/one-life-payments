@@ -107,14 +107,21 @@ class Contribution < ActiveRecord::Base
   end
 
   def process_monthly_gift
+    begin
     amount = amount_cents
     customer_id = set_customer_id stripe_token
     name = "#{customer_id}-#{amount_in_dollars(amount_cents)}"
     id_name = name
     plan = create_plan(amount, name, id_name)
     create_subscription customer_id, name
-    rescue Stripe::CardError
+    rescue => e
+      if e.message == 'Invalid positive integer'
+        errors.add('Your donation could not be processed:', "You've entered an invalid amount. Please try again.")
+      else
+        errors.add('Your donation could not be processed:', e.message + ". Please try again.")
+      end
       false
+    end
   end
 
   def amount_in_dollars amount_cents
