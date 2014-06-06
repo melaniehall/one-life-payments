@@ -9,9 +9,12 @@ class ContributionsController < ApplicationController
     if @contribution.process_payment
       redirect_to thank_you_path
     else
-      #redirect_to card_errors_path
       render :new
     end
+  end
+
+  def index
+    redirect_to new_contribution_path
   end
 
   private

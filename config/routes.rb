@@ -8,7 +8,16 @@ OneLifePayments::Application.routes.draw do
   root to: "home#index"
   match '/thank_you' => 'contributions#thank_you', :via => :get
   match '/card_errors' => 'contributions#card_errors', :via => :get
-  match '/programs' => 'home#programs', :via => :get
+  match '/about' => 'home#about', :via => :get
+  match '/our_work' => 'home#our_work', :via => :get
+  match '/communities' => 'home#communities', :via => :get
+    match '/communities/khalpar' => 'home#communities/khalpar', :via => :get
+    match '/communities/gaborda' => 'home#communities/gaborda', :via => :get
+    match '/communities/kantapakur' => 'home#communities/kantapakur', :via => :get
+    match '/communities/nalpur' => 'home#communities/nalpur', :via => :get
+    match '/communities/basirhat' => 'home#communities/basirhat', :via => :get
+  match '/contact' => 'home#contact', :via => :get
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

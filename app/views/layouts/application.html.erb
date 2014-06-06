@@ -6,22 +6,24 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <%= tag :meta, :name => "stripe-key", :content => ENV['PUBLISHABLE_KEY'] %>
 </head>
 <body>
   <div class="nav-block">
     <div class="container">
       <div class="row">
-        <div class="col-xs-10 col-sm-5">
+        <div class="col-xs-10 col-sm-2">
           <a href="/">
            <%= image_tag("oL_logo.png", :class => "header-logo") %>
           </a>
         </div>
-        <div class="col-xs-2 col-sm-7 nav-links">
+        <div class="col-xs-2 col-sm-10 nav-links">
           <div class="hidden-xs">
-            <a href="#">OUR STORY</a>
-            <a href="#">WHAT WE DO</a>
-            <a href="../contributions/new">GIVE</a>
-            <a href="#">CONTACT US</a>
+            <%= link_to("OUR STORY", about_path) %>
+            <%= link_to("WHAT WE DO", our_work_path) %>
+            <%= link_to("COMMUNITIES", communities_path) %>
+            <%= link_to("GIVE", new_contribution_path) %>
+            <%= link_to("CONTACT US", contact_path) %>
           </div>
         </div>
       </div>
