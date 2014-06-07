@@ -49,6 +49,11 @@
         $(this).removeClass('active');
         $(this).parent().removeClass('active');
       });
+      $('.community-content-block').each(function(){
+        $(this).hide();
+      })
+      var selectedBlock = $(this).data('content');
+      $('.' + selectedBlock).fadeIn();
       $(this).addClass('active');
       $(this).parent().addClass('active');
       return false;
