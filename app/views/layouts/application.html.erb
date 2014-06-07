@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OneLifePayments</title>
+  <title>One Life International</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -19,11 +19,11 @@
         </div>
         <div class="col-xs-2 col-sm-10 nav-links">
           <div class="hidden-xs">
-            <%= link_to("OUR STORY", about_path) %>
-            <%= link_to("WHAT WE DO", our_work_path) %>
-            <%= link_to("COMMUNITIES", communities_path) %>
-            <%= link_to("GIVE", new_contribution_path) %>
-            <%= link_to("CONTACT US", contact_path) %>
+            <%= link_to("OUR STORY", about_path, class: "our-story-link") %>
+            <%= link_to("WHAT WE DO", our_work_path, class: "what-we-do-link") %>
+            <%= link_to("COMMUNITIES", communities_path, class: "communities-link") %>
+            <%= link_to("GIVE", new_contribution_path, class: "give-link") %>
+            <%= link_to("CONTACT US", contact_path, class: "contact-link") %>
           </div>
         </div>
       </div>
@@ -41,6 +41,21 @@
             }, 1000);
         });
     }
+
+  $(document).ready(function(){
+    // Sidebar
+    $('.side-nav-link').on('click', function(){
+      $('.side-nav-link').each(function(){
+        $(this).removeClass('active');
+        $(this).parent().removeClass('active');
+      });
+      $(this).addClass('active');
+      $(this).parent().addClass('active');
+      return false;
+    });
+  })
+
+
   </script>
 </body>
 </html>

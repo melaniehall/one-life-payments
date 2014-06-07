@@ -147,25 +147,38 @@ p.small{
 
 /*Community Sidebar Navigation*/
 .sidebar-navigation .inner-content{
-  padding: 25px;
+  padding: 0px;
   text-align: left;
+  border: solid 1px #ccc;
 }
 
 .sidebar-navigation h4{
-  padding-bottom: 10px;
+  padding: 0px;
+  font-size: 16px;
 }
 
 .sidebar-navigation h4 a,
 .sidebar-navigation h4 a:hover{
   color: #000;
   text-decoration: none;
-}
-
-.sidebar-navigation h4.active,
-.sidebar-navigation h4:hover{
-  font-weight: 600;
+  display: block;
+  padding: 20px 25px;
 }
 
 .sidebar-navigation ul h4{
-  font-size: 14px;
+  margin: 0px;
+}
+
+.sidebar-navigation h4{
+  background: #eee;
+  margin: 0px;
+  border-bottom: solid 1px #ccc;
+}
+
+.sidebar-navigation h4:hover,
+.sidebar-navigation h4.active{
+  background: #FFF;
+  border-left: none;
+  border-left: solid 3px red;
+  margin-left: -2px;
 }

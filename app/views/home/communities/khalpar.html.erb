@@ -17,9 +17,8 @@
       </div>
     </div>
     <div class="col-xs-12 col-md-4 with-top-margin sidebar-navigation">
-      <div class="inner-content centered-block grey-bg">
-          <h4><a href="#" class="side-nav-link active">Overview</a></h4>
-          <h4>Programs</a></h4>
+      <div class="inner-content centered-block">
+          <h4 class="active"><a href="#" class="side-nav-link active">Overview</a></h4>
           <ul>
             <li><h4><a href="#" class="side-nav-link">Education</a></h4></li>
             <li><h4><a href="#" class="side-nav-link">Job Training</a></h4></li>
@@ -33,12 +32,6 @@
 
 <script>
   $(document).ready(function(){
-    $('.side-nav-link').on('click', function(){
-      $('.side-nav-link').each(function(){
-        $(this).removeClass('active');
-      });
-      $(this).addClass('active');
-      return false;
-    });
-  })
+    $('.communities-link').addClass('active');
+  });
 </script>

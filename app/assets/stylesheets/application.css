@@ -187,3 +187,24 @@ p.alert, p.notice{
 .sub-nav a.active{
   font-weight: 800;
 }
+
+.sidebar-navigation ul{
+  margin-left: 0px;
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+
+.sidebar-navigation li{
+  list-style: none;
+  margin-left: 0px;
+  padding-left: 0px
+}
+
+.sidebar-navigation li a{
+  padding-left: 25px;
+}
+
+a.side-nav-link.active,
+a.side-nav-link:hover{
+  font-weight: 800;
+}
