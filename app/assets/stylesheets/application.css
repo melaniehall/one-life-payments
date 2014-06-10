@@ -208,3 +208,151 @@ a.side-nav-link.active,
 a.side-nav-link:hover{
   font-weight: 800;
 }
+
+/*what we do*/
+.program-icon{
+  max-height: 120px;
+    min-height: 120px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  opacity: .8;
+}
+
+.small-vid{
+  max-width: 530px;
+  text-align: center;
+  margin: 30px auto 0px;
+}
+
+.iframe-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-spacer{
+  height: 60px;
+}
+
+
+/*Media Queries*/
+@media(max-width: 990px){
+  .header-logo{
+    max-width: 160px;
+  }
+  .nav-links a{
+    font-size: 12px;
+    margin-left: 10px;
+  }
+}
+
+@media(max-width: 680px){
+  .header-logo{
+    max-width: 110px;
+  }
+}
+
+@media(max-width: 580px){
+    .nav-links{
+    margin-top: 4px;
+    max-width: 75%;
+    margin-left: 25%;
+    text-align: right;
+  }
+
+    .nav-links a{
+      font-size: 8px;
+      line-height: 1em;
+    }
+}
+
+
+@media(max-width: 1200px){
+  .hero-block{
+    height: 600px;
+  }
+   .hero-block#home{
+    background: url('closeup-girl.png') #FFF no-repeat left -160px;
+    background-size: 1520px
+  }
+}
+
+@media(max-width: 990px){
+  .hero-block{
+    height: 500px;
+  }
+   .hero-block#home{
+    background: url('closeup-girl.png') #FFF no-repeat left -140px;
+    background-size: 1260px
+  }
+}
+
+@media(max-width: 835px){
+  .hero-block{
+    height: 420px;
+    padding: 0px;
+  }
+
+  .intro-block{
+    padding-left: 0px;
+    padding-right: 0px;
+    max-width: 98%;
+    margin-top: 90px;
+  }
+   .hero-block#home{
+    background: url('closeup-girl.png') #FFF no-repeat left -120px;
+    background-size: 1060px
+  }
+}
+@media(max-width: 700px){
+  .hero-block{
+    height: 380px;
+    padding: 0px;
+  }
+
+  .hero-block#home{
+    background: url('closeup-girl.png') #FFF no-repeat left -80px;
+    background-size: 900px
+  }
+
+  .intro-block{
+   margin: 40px auto;
+  }
+
+}
+
+@media(max-width: 550px){
+  .hero-block{
+    height: 240px;
+    padding: 0px;
+  }
+
+  .hero-block#home{
+    background: url('closeup-girl.png') #FFF no-repeat left -40px;
+    background-size: 550px
+  }
+
+  .intro-block{
+    display: none;
+  }
+  .strike-border{
+    margin-top: 5px;
+  }
+
+  .intro-content{
+    text-align: center;
+  }
+
+  #what-we-do-icons img{
+    margin-top: 30px;
+  }
+}

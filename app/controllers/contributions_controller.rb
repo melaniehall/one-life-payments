@@ -1,7 +1,7 @@
 class ContributionsController < ApplicationController
   # Show the stripe form.
   def new
-    @contribution = Contribution.new(amount_cents: 1000)
+    @contribution = Contribution.new(amount_cents: "")
   end
 
   def create

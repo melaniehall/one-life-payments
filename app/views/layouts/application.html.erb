@@ -6,7 +6,8 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-  <%= tag :meta, :name => "stripe-key", :content => ENV['PUBLISHABLE_KEY'] %>
+  <%= tag :meta, :name => "stripe-key", :content => ENV['STRIPE_PUBLISHABLE_KEY'] %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
   <div class="nav-block">
@@ -17,8 +18,8 @@
            <%= image_tag("oL_logo.png", :class => "header-logo") %>
           </a>
         </div>
-        <div class="col-xs-2 col-sm-10 nav-links">
-          <div class="hidden-xs">
+        <div class="col-xs-12 col-sm-10 nav-links">
+          <div class="">
             <%= link_to("OUR STORY", about_path, class: "our-story-link") %>
             <%= link_to("WHAT WE DO", our_work_path, class: "what-we-do-link") %>
             <%= link_to("COMMUNITIES", communities_path, class: "communities-link") %>

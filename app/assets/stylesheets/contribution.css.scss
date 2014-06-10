@@ -177,6 +177,14 @@ input#contribution_email{
   color: #ba2f04;
 }
 
+#giving-details{
+ margin-left: 62.5px;
+}
+
+abbr{
+  display: none;
+}
+
 /*Thank You*/
 #thank-you-block{
   margin-top: 100px;
@@ -201,6 +209,10 @@ input#contribution_email{
 }
 
 @media(max-width: 767px){
+  #giving-details{
+   margin-left: auto;
+  }
+
   #contribution-new button.submit{
     max-width: 100%;
     margin: 25px auto;

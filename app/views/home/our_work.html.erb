@@ -9,11 +9,41 @@
         </div>
       </div>
     </div>
+  <div class="stories-block">
+    <div id="isotope-demo" class="isotope">
+      <div class="element-item width2">
+      <%= image_tag("Education-pg.png") %>
+      </div>
+      <div class="element-item">
+      <%= image_tag("healthwellness.png") %>
+      </div>
+      <div class="element-item">
+      <%= image_tag("Literacy.png") %>
+      </div>
+      <div class="element-item">
+      <%= image_tag("nutrition.png") %>
+      </div>
+      <div class="element-item">
+      <%= image_tag("WaterSanitation.png") %>
+      </div>
+      <div class="element-item">
+      <%= image_tag("VocationalTraining.png") %>
+      </div>
+      <div class="element-item">
+      <%= image_tag("Church.png") %>
+      </div>
+            <div class="element-item width2">
+      <%= image_tag("Cultural Programs.png") %>
+      </div>
+    </div>
+  </div>
 
-    <div class="row center-block">
+<!--
+  <div class="row center-block">
       <div class="col-xs-4 program-square">
         <div class="grey-square">
           <div class="inner-content">
+            <img class="program-icon" src="https://s3.amazonaws.com/one-life/icons/897-graduation-cap%402x.png">
             <i class="fa fa-graduation-cap fa-10x"></i>
             <h4>Education</h4>
           </div>
@@ -22,6 +52,7 @@
       <div class="col-xs-4 program-square">
         <div class="grey-square">
           <div class="inner-content">
+            <img class="program-icon" src="https://s3.amazonaws.com/one-life/icons/742-wrench%402x.png">
             <i class="fa fa-briefcase fa-10x"></i>
             <h4>Vocational Training</h4>
           </div>
@@ -30,6 +61,7 @@
       <div class="col-xs-4 program-square">
         <div class="grey-square">
           <div class="inner-content">
+            <img class="program-icon" src="https://s3.amazonaws.com/one-life/icons/794-chart%402x.png">
             <i class="fa fa-bar-chart-o fa-10x"></i>
             <h4>Nutritional Program</h4>
           </div>
@@ -40,6 +72,7 @@
       <div class="col-xs-4">
       <div class="grey-square">
         <div class="inner-content">
+          <img class="program-icon" src="https://s3.amazonaws.com/one-life/icons/748-heart%402x.png">
         <i class="fa fa-stethoscope fa-10x"></i>
         <h4>Health and Wellness</h4>
       </div>
@@ -50,6 +83,7 @@
         <div class="grey-square">
           <div class="inner-content">
             <i class="fa fa-pencil fa-10x"></i>
+            <img class="program-icon" src="https://s3.amazonaws.com/one-life/icons/832-pencil%402x.png">
             <h4>Literacy Classes</h4>
           </div>
         </div>
@@ -58,6 +92,7 @@
         <div class="grey-square">
           <div class="inner-content">
             <i class="fa fa-tint fa-10x"></i>
+            <img class="program-icon" src="https://s3.amazonaws.com/one-life/icons/799-beverage%402x.png">
             <h4>Water Sanitation</h4>
           </div>
         </div>
@@ -67,6 +102,7 @@
       <div class="col-xs-4 program-square">
         <div class="grey-square">
           <div class="inner-content">
+            <img class="program-icon" src="https://s3.amazonaws.com/one-life/icons/872-podium%402x.png">
             <i class="fa fa-heart-o fa-10x"></i>
             <h4>Church Leadership</h4>
           </div>
@@ -75,6 +111,7 @@
       <div class="col-xs-4 program-square">
         <div class="grey-square">
           <div class="inner-content">
+            <img class="program-icon" src="https://s3.amazonaws.com/one-life/icons/842-chat-bubbles%402x.png">
             <i class="fa fa-comments-o fa-10x"></i>
             <h4>Counseling</h4>
           </div>
@@ -84,6 +121,7 @@
       <div class="col-xs-4 program-square">
         <div class="grey-square">
           <div class="inner-content">
+            <img class="program-icon" src="https://s3.amazonaws.com/one-life/icons/837-palette%402x.png">
             <i class="fa fa-headphones fa-10x"></i>
             <h4>Cultural Programs</h4>
           </div>
@@ -91,10 +129,91 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
+<div class="footer-spacer"></div>
+<style>
+    /* ---- isotope ---- */
+/* clear fix */
+.isotope:after {
+  content: '';
+  display: block;
+  clear: both;
+}
 
+/* ---- .element-item ---- */
+
+.element-item {
+  position: relative;
+  float: left;
+  width: 180px;
+  height: auto;
+  margin: 5px;
+  padding: 0px;
+  background: #262020;
+  color: #FFF;
+}
+
+.element-item img{
+  max-width: 100%;
+}
+
+  .element-item a img{
+    opacity: .8;
+  }
+  .element-item a:hover img{
+    opacity: 1;
+  }
+
+
+    .element-item.width2 { width: 360px; height: auto;}
+.element-item.height2 { height: auto; }
+
+.element-item > * {
+  margin: 0;
+  padding: 0;
+}
+
+.element-item .symbol {
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  font-size: 42px;
+  font-weight: bold;
+  color: white;
+}
+
+  #stories #isotope-demo{
+    max-width: 270px;
+    margin: 0px auto;
+  }
+  </style>
+<script type="text/javascript" src="http://isotope.metafizzy.co/beta/isotope.pkgd.js"></script>
 <script>
   $(document).ready(function(){
+
+    $(window).load(function(){
+      function showElements(){
+        $('.back-to-top-mobile').show();
+      };
+      window.setTimeout( showElements, 200 ); // 5 seconds
+    })
+    $.fn.scrollView = function () {
+      return this.each(function () {
+        $('html, body').animate({
+          scrollTop: $(this).offset().top
+        }, 1000);
+      });
+    };
     $('.what-we-do-link').addClass('active');
+
+      var $container = $('#isotope-demo').imagesLoaded( function() {
+        $container = $('#isotope-demo').isotope({
+          itemSelector: '.element-item',
+          layoutMode: 'masonry',
+          masonry: {
+            columnWidth: 135
+          }
+        });
+      });
   });
 </script>
