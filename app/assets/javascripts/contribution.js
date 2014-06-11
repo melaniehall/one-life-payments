@@ -55,7 +55,8 @@ jQuery(function($) {
     var lastName = $('#contribution_last_name').val()
     var emailAddress = $('#contribution_email').val()
     var giftAmount = $('#contribution_amount').val()
-    if (!firstName || !lastName || !emailAddress || !giftAmount){
+    var zipCode = $('#contribution_address_zip').val()
+    if (!firstName || !lastName || !emailAddress || !giftAmount || !zipCode){
       $('.validation-errors').html('*All fields are required')
       clearInfo()
       return false
