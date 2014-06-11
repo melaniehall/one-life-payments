@@ -2,38 +2,46 @@
   <div class="inner-content percent-90">
     <div class="row">
       <div class="col-xs-12 col-md-9">
-          <div class="inner-content padding-15">
+          <div class="inner-content percent-90">
               <h1>What We Do</h1>
           <!--<h4 class="subtitle red">Why We Exist</h4>-->
             <p>We partner with five communities in Kolkata, India to create equal opportunities among the lives of it's poorest citizens, those making less than $2/day. We believe holistic development and increased community ownership has the potential to change thousands of lives. We're implementing development through these programs:</p>
         </div>
       </div>
     </div>
-  <div class="stories-block">
+  <div class="programs-block">
     <div id="isotope-demo" class="isotope">
       <div class="element-item width2">
-      <%= image_tag("Education-pg.png") %>
+      <%= image_tag("program-assets/education.png") %>
       </div>
       <div class="element-item">
-      <%= image_tag("healthwellness.png") %>
+      <%= image_tag("program-assets/water-sanitation.png") %>
       </div>
       <div class="element-item">
-      <%= image_tag("Literacy.png") %>
+      <%= image_tag("program-assets/job-training.png") %>
       </div>
       <div class="element-item">
-      <%= image_tag("nutrition.png") %>
+      <%= image_tag("program-assets/health-wellness.png") %>
       </div>
       <div class="element-item">
-      <%= image_tag("WaterSanitation.png") %>
+      <%= image_tag("program-assets/literacy-classes.png") %>
       </div>
-      <div class="element-item">
-      <%= image_tag("VocationalTraining.png") %>
+      <div class="element-item width2">
+        <div class="element-item sq">
+        <%= image_tag("program-assets/church-leadership.png") %>
+        </div>
+        <div class="element-item sm sq">
+        <%= image_tag("program-assets/cultural-programs.png") %>
+        </div>
+        <div class="element-item sq">
+        <%= image_tag("program-assets/bus-dev.png") %>
+        </div>
+        <div class="element-item sm sq">
+        <%= image_tag("program-assets/counseling.png") %>
+        </div>
       </div>
-      <div class="element-item">
-      <%= image_tag("Church.png") %>
-      </div>
-            <div class="element-item width2">
-      <%= image_tag("Cultural Programs.png") %>
+      <div class="element-item width2">
+      <%= image_tag("program-assets/nutrition.png") %>
       </div>
     </div>
   </div>
@@ -145,12 +153,19 @@
 .element-item {
   position: relative;
   float: left;
-  width: 180px;
+  width: 230px;
   height: auto;
   margin: 5px;
   padding: 0px;
-  background: #262020;
   color: #FFF;
+}
+
+.element-item.sm{
+  margin-left: 8px;
+}
+
+.element-item.sq{
+  margin-bottom: 8px;
 }
 
 .element-item img{
@@ -165,7 +180,7 @@
   }
 
 
-    .element-item.width2 { width: 360px; height: auto;}
+.element-item.width2 { width: 468px; height: auto;}
 .element-item.height2 { height: auto; }
 
 .element-item > * {
@@ -186,6 +201,8 @@
     max-width: 270px;
     margin: 0px auto;
   }
+
+  @media(max-width: 1200px){
   </style>
 <script type="text/javascript" src="http://isotope.metafizzy.co/beta/isotope.pkgd.js"></script>
 <script>

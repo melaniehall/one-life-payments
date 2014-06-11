@@ -83,13 +83,13 @@ p.alert, p.notice{
 }
 
 .intro-block{
-  margin: 130px auto;
+  margin: 200px auto;
 }
 
 .intro-block h1{
   color: #FFF;
   font-family: "Lato", sans-serif;
-  font-weight: 100;
+  font-weight: 200;
   font-size: 3em;
   line-height: 1.25em;
 }

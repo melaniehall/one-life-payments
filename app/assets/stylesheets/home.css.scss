@@ -101,7 +101,7 @@ p.small{
 }
 .community-thumb a:hover,
 .community-thumb:hover{
-  color: red;
+  color: #ba2f04;
   text-decoration: none;
        -webkit-transition: color 1000ms ease;
   -moz-transition: color 1000ms ease;
@@ -197,6 +197,131 @@ p.small{
 .sidebar-navigation h4.active{
   background: #FFF;
   border-left: none;
-  border-left: solid 3px red;
+  border-left: solid 3px #ba2f04;
   margin-left: -2px;
+}
+
+/*Programs*/
+.programs-block{
+  max-width: 960px;
+  margin: 0px auto;
+}
+
+.visible-inline-xs{
+  display: none;
+}
+
+@media(max-width: 990px){
+
+  p.bio{
+    font-size: 13px;
+    line-height: 1.5em;
+  }
+
+  .tag{
+    font-size: 13px;
+    line-height: 1.5em;
+    margin-top: 0px;
+  }
+
+  .staff-name h4{
+    margin-bottom: 5px;
+  }
+}
+@media(max-width: 767px){
+
+  #community-landing-block{
+    max-width: 450px;
+    margin: 0px auto;
+  }
+
+    .community-thumb a,
+  .community-thumb a:hover,
+  .community-thumb:hover{
+   color: #000;
+      -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+  }
+
+  .community-thumb img,
+  .community-thumb:hover img{
+    opacity: 1;
+      -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+  }
+
+  h1{
+    font-size: 2em;
+    line-height: 1.25em;
+  }
+
+  h2{
+    font-size: 1.75em;
+    line-height: 1.25em;
+  }
+
+  h3{
+    font-size: 1.5em;
+    line-height: 1.25em;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 1.5em;
+  }
+
+  .community-thumb h3{
+    margin: 5px auto;
+  }
+
+  .percent-90{
+    max-width: 100%;
+  }
+
+  .visible-inline-xs{
+    display: inline-block;
+  }
+
+  /*Community Pages*/
+  .community-header{
+  height: 250px;
+  width: 100%;
+}
+
+.community-header h1{
+  margin-top: 180px;
+  font-size: 3em;
+}
+
+.community-header#khalpar{
+  background: url('khalpar.jpg') center -100px no-repeat;
+  background-size: 800px;
+  display: block;
+}
+
+.community-header#kantapakur{
+  background: url('kantapakur-bg.jpg') center -100px no-repeat;
+  background-size: 800px;
+  display: block;
+}
+
+.community-header#gaborda{
+  background: url('gaborda.jpg') center -80px no-repeat;
+  background-size: 800px;
+  display: block;
+}
+
+.community-header#nalpur{
+  background: url('nalpur.jpg') center -150px no-repeat;
+  background-size: 800px;
+  display: block;
+}
+
+.top-section{
+  margin-top: 20px;
+}
 }
