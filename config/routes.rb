@@ -17,6 +17,7 @@ OneLifePayments::Application.routes.draw do
     match '/communities/nalpur' => 'home#communities/nalpur', :via => :get
     match '/communities/basirhat' => 'home#communities/basirhat', :via => :get
   match '/contact' => 'home#contact', :via => :get
+  match '/giving-support' => 'home#giving-support', :via => :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
