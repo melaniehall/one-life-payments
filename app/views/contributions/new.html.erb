@@ -1,0 +1,86 @@
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+  <%= javascript_include_tag "contribution", "data-turbolinks-track" => false %>
+  <script>
+    jQuery(function($) { Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));})
+  </script>
+  <div class="container page-header-block">
+  </div>
+<div class="container" id="contribution-new">
+  <div class="row visible-xs hide centered-block">
+    <h1>Donate</h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <%= simple_form_for @contribution do |f| %>
+        <%= f.error_messages %>
+        <div class="validation-errors"></div>
+        <div class="payment-errors"></div>
+
+        <div class="form-row donation-information">
+          <%= f.input :amount %>
+          <%= f.input :monthly, :label => "I would like to make this a monthly donation." %>
+        </div>
+
+         <div class="form-row card-information">
+          <label>
+            <span>Card Number</span>
+          </label>
+          <input class="card-number" type="text" size="20" data-stripe="number"/>
+          <label>
+            <span>Expiration (MM/YYYY)</span>
+          </label>
+
+          <input class="exp-month" type="text" size="2" data-stripe="exp-month"/>
+          <span> / </span>
+          <input class="exp-year" type="text" size="4" data-stripe="exp-year"/>
+          <label class="cvc-label">
+            <span>CVC</span>
+          </label>
+          <input class="cvc-input" type="text" size="4" data-stripe="cvc"/>
+
+        </div>
+
+        <div class="form-row personal-information">
+          <div class="first-name-block">
+            <%= f.input :first_name, :label => "Full Name", :placeholder => "First Name"%>
+          </div>
+          <div class="last-name-block">
+            <%= f.input :last_name, :label => false, :placeholder => "Last Name" %>
+          </div>
+          <%= f.input :email %>
+          <%= f.input :address_line1, label: "Address Line 1" %>
+          <%= f.input :address_line2, label: "Address Line 2" %>
+          <div class="city-block">
+            <%= f.input :address_city, label: "City" %>
+          </div>
+          <div class="state-block">
+            <%= f.input :address_state, label: "State" %>
+          </div>
+          <div class="zip-block">
+            <%= f.input :address_zip, label: "Zip Code" %>
+          </div>
+        </div>
+
+        <button type="submit" class="submit">Submit Payment</button>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="with-top-margin centered-block" id="giving-details">
+  <p class="small">One Life International is a registered 501(c)(3). All donations are 100% tax-deductible. </p>
+  <p class="small red"><a href="/giving-support" class="red">Donation FAQ</a> | <a class="red" href="mailto:fly@onelifeup.org">Support</a>
+</div>
+<div class="loading" style="display:none">
+  <div class="inner-content">
+    We're processing your donation<br>
+  </div>
+</div>
+
+<div class="footer-spacer"></div>
+<script>
+  $(document).ready(function(){
+    $('.give-link').addClass('active');
+  });
+</script>

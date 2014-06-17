@@ -9,5 +9,356 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require bootstrap.min
  *= require_tree .
+ *= require application
  */
+
+.nav-block{
+  background: #414042;
+  color: #FFF;
+  position: relative;
+  height: 50px;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, .3);
+}
+
+.header-logo{
+  position: absolute;
+  max-width: 180px;
+}
+
+.header-logo-2{
+  margin-top: 16px;
+  width: 280px;
+}
+
+.nav-block h4{
+  font-weight: 200;
+  letter-spacing: .1em;
+}
+
+.nav-links{
+  text-align: right;
+  margin-top: 15px;
+}
+
+.nav-links a{
+  color: #FFF;
+  margin-left: 10px;
+  letter-spacing: .1em;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  margin-left: 20px;
+}
+
+.nav-links a:hover,
+
+.nav-links a.active{
+  color: #FFF;
+  text-decoration: none;
+  padding-bottom: 2.5px;
+  border-bottom: solid 3px #ba2f04;
+}
+
+a.red, .red{
+  color: #ba2f04;
+}
+
+a.red:hover{
+  color: #ba2f04;
+}
+
+.hero-block{
+  height: 700px;
+  display: block;
+}
+
+.hero-block#home{
+  background: url('closeup-girl.png') #FFF no-repeat left -160px;
+  background-size: 1820px
+}
+
+p.alert, p.notice{
+  position:absolute;
+}
+
+.intro-block{
+  margin: 200px auto;
+}
+
+.intro-block h1{
+  color: #FFF;
+  font-family: "Lato", sans-serif;
+  font-weight: 200;
+  font-size: 3em;
+  line-height: 1.25em;
+}
+
+.intro-block a{
+  background: #ba2f04;
+  display: inline-block;
+  width: 140px;
+  height: 40px;
+  padding-top: 8px;
+  color: #FFF;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-top: 10px;
+  text-align: center;
+  margin-right: 5px;
+  border: solid 2px transparent;
+}
+
+.intro-block a.learn-more{
+  background: none;
+  border: solid 2px #FFF;
+}
+
+.intro-block a:hover{
+  color: #FFF;
+  text-decoration: none;
+}
+
+.intro-block p{
+  color: #FFF;
+  font-size: "Lato", sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 24px;
+  max-width: 45%;
+}
+
+.strike-border {
+  background:url('strike-bg.jpg') center center repeat-x;
+  width:100%;
+  margin-top: 20px;
+}
+.strike-border h2 {
+  background-color:#ffffff;
+  display:inline-block;
+  padding:5px 15px 15px 15px;
+  font-size: 40px;
+  line-height: 38px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.intro-content p{
+  font-family: 'Lato', sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  line-height:24px;
+  letter-spacing: .03em;
+}
+
+#what-we-do-icons{
+  margin-top: 20px;
+  margin-bottom: 200px;
+  text-align: center;
+}
+#what-we-do-icons img{
+  max-width: 200px;
+  margin: 0px auto;
+}
+
+.sub-nav{
+  background: #CCC;
+  height: 32px;
+  padding-top: 5px;
+  text-align: right;
+}
+
+.sub-nav a{
+  color: #414042;
+  width: auto;
+  display: inline-block;
+  margin-left: 20px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+
+.sub-nav a:hover{
+  color: #FFF;
+  text-decoration: none;
+  background: none;
+}
+
+.sub-nav a.active{
+  font-weight: 800;
+}
+
+.sidebar-navigation ul{
+  margin-left: 0px;
+  padding-left: 0px;
+  margin-bottom: 0px;
+}
+
+.sidebar-navigation li{
+  list-style: none;
+  margin-left: 0px;
+  padding-left: 0px
+}
+
+.sidebar-navigation li a{
+  padding-left: 25px;
+}
+
+a.side-nav-link.active,
+a.side-nav-link:hover{
+  font-weight: 800;
+}
+
+/*what we do*/
+.program-icon{
+  max-height: 120px;
+    min-height: 120px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  opacity: .8;
+}
+
+.small-vid{
+  max-width: 530px;
+  text-align: center;
+  margin: 30px auto 0px;
+}
+
+.iframe-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-spacer{
+  height: 60px;
+}
+
+
+/*Media Queries*/
+@media(max-width: 990px){
+  .header-logo{
+    max-width: 160px;
+  }
+  .nav-links a{
+    font-size: 12px;
+    margin-left: 10px;
+  }
+}
+
+@media(max-width: 767px){
+  .sidebar-navigation{
+    display: none;
+  }
+}
+
+@media(max-width: 680px){
+  .header-logo{
+    max-width: 110px;
+  }
+}
+
+@media(max-width: 580px){
+    .nav-links{
+    margin-top: 4px;
+    max-width: 75%;
+    margin-left: 25%;
+    text-align: right;
+  }
+
+  .nav-links a{
+    font-size: 8px;
+    line-height: 1em;
+  }
+}
+
+
+@media(max-width: 1200px){
+  .hero-block{
+    height: 600px;
+  }
+   .hero-block#home{
+    background: url('closeup-girl.png') #FFF no-repeat left -160px;
+    background-size: 1520px
+  }
+}
+
+@media(max-width: 990px){
+  .hero-block{
+    height: 500px;
+  }
+   .hero-block#home{
+    background: url('closeup-girl.png') #FFF no-repeat left -140px;
+    background-size: 1260px
+  }
+}
+
+@media(max-width: 835px){
+  .hero-block{
+    height: 420px;
+    padding: 0px;
+  }
+
+  .intro-block{
+    padding-left: 0px;
+    padding-right: 0px;
+    max-width: 98%;
+    margin-top: 90px;
+  }
+   .hero-block#home{
+    background: url('closeup-girl.png') #FFF no-repeat left -120px;
+    background-size: 1060px
+  }
+}
+@media(max-width: 700px){
+  .hero-block{
+    height: 380px;
+    padding: 0px;
+  }
+
+  .hero-block#home{
+    background: url('closeup-girl.png') #FFF no-repeat left -80px;
+    background-size: 900px
+  }
+
+  .intro-block{
+   margin: 40px auto;
+  }
+
+}
+
+@media(max-width: 550px){
+  .hero-block{
+    height: 240px;
+    padding: 0px;
+  }
+
+  .hero-block#home{
+    background: url('closeup-girl.png') #FFF no-repeat left -40px;
+    background-size: 550px
+  }
+
+  .intro-block{
+    display: none;
+  }
+  .strike-border{
+    margin-top: 5px;
+  }
+
+  .intro-content{
+    text-align: center;
+  }
+
+  #what-we-do-icons img{
+    margin-top: 30px;
+  }
+}

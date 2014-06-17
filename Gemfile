@@ -1,12 +1,31 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.17'
+gem 'devise'
+gem 'money'
+gem 'money-rails'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'simple_form'
+gem 'country_select'
+gem 'dynamic_form'
+gem 'font-awesome-sass'
+gem 'gmaps4rails'
+gem 'figaro'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
+group :development, :test do
+	gem 'sqlite3'
+	gem 'dotenv'
+  gem 'pry-rails'
+  gem 'rspec-rails'
+end
 
+group :production do
+	gem 'pg'
+  gem 'rails_12factor'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -29,7 +48,7 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+ gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'

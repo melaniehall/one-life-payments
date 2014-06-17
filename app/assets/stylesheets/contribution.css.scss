@@ -1,0 +1,296 @@
+// Place all the styles related to the Contributions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.container input,
+.container label{
+  max-width: 100%;
+}
+
+.page-header-block{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom:40px;
+}
+
+#contribution-new{
+  max-width: 500px;
+  margin: 0px auto;
+}
+
+#contribution_amount{
+  background: url('usd.png') no-repeat right center;
+  background-size: auto;
+  background-position: right 1.75px;
+}
+
+body{
+  font-family: "Lato", sans-serif;
+}
+
+#contribution-new input{
+  width: 300px;
+}
+
+#contribution-new select{
+  width: 300px;
+}
+
+#contribution_gift_designation{
+  -webkit-appearance: none;
+  background: url('dropdown_arrow.png') #FFF no-repeat right center;
+  background-size: 20px;
+  height: 38px;
+  border-radius: 0px;
+  padding: 2.5px;
+  border: solid 1px #ccc;
+  box-sizing: border-box;
+  cursor: pointer;
+  -moz-box-shadow:    inset 0 0 1px #ccc;
+  -webkit-box-shadow: inset 0 0 1px #ccc;
+   box-shadow:         inset 0 0 1px #ccc;
+}
+
+#contribution-new label{
+  width: 110px;
+  text-align: right;
+  margin-right: 10px;
+}
+#contribution-new label.boolean{
+  width: 100%;
+  text-align: left;
+  margin-left: 120px;
+}
+
+#contribution-new label.boolean input{
+  width: auto;
+  text-align: left;
+  margin-right: 10px;
+}
+
+#contribution-new .submit{
+  width: 300px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+#contribution-new .form-row{
+  margin: 10px auto 0px;
+}
+
+#contribution-new input.exp-month{
+  width: 45px;
+}
+
+#contribution-new input.exp-year{
+  width: 82.5px;
+}
+
+#contribution-new label.cvc-label{
+  width: 56px;
+  display: inline-block;
+}
+
+
+#contribution-new input.cvc-input{
+  width: 93px;
+}
+
+#contribution-new .card-information input{
+  margin-left: -2px;
+  max-width: 299px;
+}
+
+#contribution-new button.submit{
+  -webkit-appearance: none;
+  background: #ba2f04;
+  color: #FFF;
+  height: 55px;
+  padding-top: 5px;
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  font-weight: 100;
+  text-align: center;
+  box-shadow: none;
+  border: none;
+  display: block;
+  margin: 25px auto;
+  margin-left: 120px;
+}
+
+#contribution-new button.submit.disabled{
+  opacity: .2;
+}
+
+#contribution-new input[type=text],
+input#contribution_gift_designation,
+input#contribution_email{
+  height: 38px;
+  margin-bottom: 8px;
+}
+
+#contribution-new .name-block input{
+  width: 100px;
+  display: inline-block;
+}
+
+#contribution-new .first-name-block{
+  width: 260px;
+  display: inline-block;
+}
+
+#contribution-new .first-name-block input{
+  width: 140px;
+  display: inline-block;
+}
+
+#contribution-new .last-name-block{
+  width: 157px;
+  display: inline-block;
+}
+#contribution-new .city-block{
+  width: 280px;
+  display: inline-block;
+}
+#contribution-new .state-block{
+  width: 170px;
+  display: inline-block;
+}
+
+#contribution-new .city-block input{
+  width: 140px;
+  display: inline-block;
+}
+
+#contribution-new .state-block input{
+  width: 95px;
+  display: inline-block;
+}
+
+#contribution-new .state-block label{
+  width: auto;
+}
+
+.validation-errors, .payment-errors{
+  text-align: center;
+  color: #ba2f04;
+}
+
+#giving-details{
+ margin-left: 62.5px;
+}
+
+abbr{
+  display: none;
+}
+
+/*Thank You*/
+#thank-you-block{
+  margin-top: 100px;
+  text-align: center;
+}
+
+#contribution-new #errorExplanation h2,
+#contribution-new #errorExplanation p{
+  display: none;
+}
+
+#contribution-new #errorExplanation ul{
+  padding-left: 0px;
+  text-align: center;
+}
+
+#contribution-new #errorExplanation li{
+  padding-left: 0px;
+  margin-left: 0px;
+  list-style: none;
+  color: #ba2f04;
+}
+
+@media(max-width: 767px){
+  #giving-details{
+   margin-left: auto;
+  }
+
+  #contribution-new button.submit{
+    max-width: 100%;
+    margin: 25px auto;
+  }
+  #contribution-new .form-row{
+  max-width: 300px;
+  }
+  #contribution-new .first-name-block,
+  #contribution-new .last-name-block,
+  #contribution-new .city-block,
+  #contribution-new .state-block{
+    width: 49.5%;
+  }
+
+  #contribution-new .card-information input{
+    margin-left: 0px;
+  }
+
+  #contribution-new .card-information input.card-number{
+    width: 100%;
+  }
+
+  #contribution-new .first-name-block input,
+  #contribution-new .last-name-block input,
+  #contribution-new .city-block input,
+  #contribution-new .state-block input{
+    width: auto;
+  }
+
+  #contribution-new label.cvc-label,
+  #contribution-new input.cvc-input,
+  #contribution-new label,
+  #contribution-new input,
+  #contribution-new input.exp-month,
+  #contribution-new input.exp-year{
+    width: auto;
+  }
+
+  #contribution-new label.boolean{
+    width: auto;
+    margin-left: 0px;
+  }
+
+  #contribution-new label{
+    width: 90%;
+    text-align: left;
+  }
+
+  #contribution-new .card-information label{
+    width: 95%;
+  }
+
+  #contribution-new label.cvc-label{
+    display: block;
+  }
+
+  .page-header-block h1{
+    font-size: 25px;
+    line-height: 1.25em;
+  }
+}
+
+.loading{
+  background: rgba(0, 0, 0, .7);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+.loading .inner-content{
+  padding-top: 50px;
+  max-width: 280px;
+  margin: 0px auto;
+  height: 150px;
+  text-align: center;
+  color: #FFF;
+  font-size: 30px;
+  margin-top: 250px;
+}

@@ -1,14 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>OneLifePayments</title>
+  <title>One Life International</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+  <%= tag :meta, :name => "stripe-key", :content => ENV['STRIPE_PUBLISHABLE_KEY'] %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+  <div class="nav-block">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-10 col-sm-2">
+          <a href="/">
+           <%= image_tag("oL_logo.png", :class => "header-logo") %>
+          </a>
+        </div>
+        <div class="col-xs-12 col-sm-10 nav-links">
+          <div class="">
+            <%= link_to("OUR STORY", about_path, class: "our-story-link") %>
+            <%= link_to("WHAT WE DO", our_work_path, class: "what-we-do-link") %>
+            <%= link_to("COMMUNITIES", communities_path, class: "communities-link") %>
+            <%= link_to("GIVE", new_contribution_path, class: "give-link") %>
+            <%= link_to("CONTACT US", contact_path, class: "contact-link") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<%= yield %>
+	<p class="notice"><%= notice %></p>
+	<p class="alert"><%= alert %></p>
+	<%= yield %>
+  <script>
+    $.fn.scrollView = function () {
+        return this.each(function () {
+            $('html, body').animate({
+                scrollTop: $(this).offset().top
+            }, 1000);
+        });
+    }
 
+  $(document).ready(function(){
+    // Sidebar
+    $('.side-nav-link').on('click', function(){
+      $('.side-nav-link').each(function(){
+        $(this).removeClass('active');
+        $(this).parent().removeClass('active');
+      });
+      $('.community-content-block').each(function(){
+        $(this).hide();
+      })
+      var selectedBlock = $(this).data('content');
+      $('.' + selectedBlock).fadeIn();
+      $(this).addClass('active');
+      $(this).parent().addClass('active');
+      return false;
+    });
+  })
+
+
+  </script>
 </body>
 </html>
