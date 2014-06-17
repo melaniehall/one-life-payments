@@ -255,6 +255,12 @@ a.side-nav-link:hover{
   }
 }
 
+@media(max-width: 767px){
+  .sidebar-navigation{
+    display: none;
+  }
+}
+
 @media(max-width: 680px){
   .header-logo{
     max-width: 110px;
@@ -269,10 +275,10 @@ a.side-nav-link:hover{
     text-align: right;
   }
 
-    .nav-links a{
-      font-size: 8px;
-      line-height: 1em;
-    }
+  .nav-links a{
+    font-size: 8px;
+    line-height: 1em;
+  }
 }
 
 
