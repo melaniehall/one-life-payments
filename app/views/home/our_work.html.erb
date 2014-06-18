@@ -285,8 +285,20 @@
   <!--
 <script type="text/javascript" src="http://isotope.metafizzy.co/beta/isotope.pkgd.js"></script>-->
 <script>
-/*
+
   $(document).ready(function(){
+    $('.what-we-do-link').addClass('active');
+  });
+
+  $.fn.scrollView = function () {
+    return this.each(function () {
+      $('html, body').animate({
+        scrollTop: $(this).offset().top
+      }, 1000);
+    });
+  };
+
+  /*
 //add imagesLoaded
     $(window).load(function(){
       function showElements(){
@@ -295,15 +307,8 @@
       window.setTimeout( showElements, 200 ); // 5 seconds
     })
 
-    $.fn.scrollView = function () {
-      return this.each(function () {
-        $('html, body').animate({
-          scrollTop: $(this).offset().top
-        }, 1000);
-      });
-    };
 
-    $('.what-we-do-link').addClass('active');
+
 
       var $container = $('#isotope-demo');
         $container.isotope({
