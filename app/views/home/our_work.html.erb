@@ -2,7 +2,7 @@
   <div class="inner-content percent-90">
     <div class="row">
       <div class="col-xs-12 col-md-9">
-          <div class="inner-content percent-90">
+          <div class="inner-content percent-90" id="what-we-do-header">
               <h1>What We Do</h1>
           <!--<h4 class="subtitle red">Why We Exist</h4>-->
             <p>We partner with five communities in Kolkata, India to create equal opportunities among the lives of it's poorest citizens, those making less than $2/day. We believe holistic development and increased community ownership has the potential to change thousands of lives. We're implementing development through these programs:</p>
@@ -11,7 +11,7 @@
     </div>
   <div class="programs-block">
     <div id="isotope-demo" class="isotope">
-      <div class="element-item width2">
+      <div class="element-item width2 hidden-sm hidden-xs">
       <%= image_tag("program-assets/education.png") %>
       </div>
       <div class="element-item">
@@ -26,7 +26,7 @@
       <div class="element-item">
       <%= image_tag("program-assets/literacy-classes.png") %>
       </div>
-      <div class="element-item width2">
+      <div class="element-item width2 wide">
         <div class="element-item sq">
         <%= image_tag("program-assets/church-leadership.png") %>
         </div>
@@ -40,8 +40,13 @@
         <%= image_tag("program-assets/counseling.png") %>
         </div>
       </div>
-      <div class="element-item width2">
+      <div class="2-2 element-item width2">
       <%= image_tag("program-assets/nutrition.png") %>
+      </div>
+      <div class="2-2 element-item visible-xs visible-sm hidden-md">
+        <span class="extra-left">
+        <%= image_tag("program-assets/education.png") %>
+      </span>
       </div>
     </div>
   </div>
@@ -138,6 +143,7 @@
     </div>
   </div>
 </div>-->
+
 <div class="footer-spacer"></div>
 <style>
     /* ---- isotope ---- */
@@ -203,17 +209,92 @@
   }
 
   @media(max-width: 1200px){
-  </style>
-<script type="text/javascript" src="http://isotope.metafizzy.co/beta/isotope.pkgd.js"></script>
-<script>
-  $(document).ready(function(){
+    .element-item {
+      position: relative;
+      float: left;
+      width: 200px;
+      height: auto;
+      margin: 5px;
+      padding: 0px;
+      color: #FFF;
+    }
 
+    .element-item.sm{
+      margin-left: 8px;
+    }
+
+    .element-item.sq{
+      margin-bottom: 8px;
+    }
+
+    .element-item img{
+      max-width: 100%;
+    }
+
+      .element-item a img{
+        opacity: .8;
+      }
+      .element-item a:hover img{
+        opacity: 1;
+      }
+
+
+    .element-item.width2 { width: 408px; height: auto;}
+    .element-item.height2 { height: auto; }
+
+    .element-item > * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .element-item .symbol {
+      position: absolute;
+      left: 10px;
+      top: 0px;
+      font-size: 42px;
+      font-weight: bold;
+      color: white;
+    }
+
+      #stories #isotope-demo{
+        max-width: 270px;
+        margin: 0px auto;
+      }
+
+      .percent-90#what-we-do-header{
+        max-width: 100%;
+      }
+  }
+
+  @media(max-width: 996px){
+        .element-item {
+      position: relative;
+      float: left;
+      width: 47%;
+      height: auto;
+      margin: 2.5px;
+      padding: 0px;
+      color: #FFF;
+    }
+    .element-item.width2 { width: auto; height: auto; max-width: 47%}
+    .element-item.width2.wide { width: auto; height: auto; max-width: 100%;}
+
+    .element-item.sq{margin: 2.5px;}
+  }
+  </style>
+  <!--
+<script type="text/javascript" src="http://isotope.metafizzy.co/beta/isotope.pkgd.js"></script>-->
+<script>
+/*
+  $(document).ready(function(){
+//add imagesLoaded
     $(window).load(function(){
       function showElements(){
         $('.back-to-top-mobile').show();
       };
       window.setTimeout( showElements, 200 ); // 5 seconds
     })
+
     $.fn.scrollView = function () {
       return this.each(function () {
         $('html, body').animate({
@@ -221,16 +302,17 @@
         }, 1000);
       });
     };
+
     $('.what-we-do-link').addClass('active');
 
-      var $container = $('#isotope-demo').imagesLoaded( function() {
-        $container = $('#isotope-demo').isotope({
-          itemSelector: '.element-item',
-          layoutMode: 'masonry',
-          masonry: {
-            columnWidth: 135
-          }
-        });
+      var $container = $('#isotope-demo');
+        $container.isotope({
+        itemSelector: '.element-item',
+        layoutMode: 'masonry',
+        masonry: {
+          columnWidth: 240
+        }
       });
   });
+*/
 </script>

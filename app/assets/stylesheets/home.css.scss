@@ -161,7 +161,21 @@ p.small{
   text-shadow: 1px 1px 10px #000;
   color: #FFF;
   font-size: 58px;
+  margin-bottom: 15px;
 }
+
+.history-photo img{
+  max-width: 100%;
+}
+
+.community-landing-link,
+.community-landing-link:hover{
+  color: #FFF;
+  text-transform: uppercase;
+  font-family: "Lato", sans-serif;
+  margin-left: 5px;
+}
+
 
 /*Community Sidebar Navigation*/
 .sidebar-navigation .inner-content{
@@ -298,25 +312,25 @@ p.small{
 }
 
 .community-header#khalpar{
-  background: url('khalpar.jpg') center -100px no-repeat;
+  background: url('https://s3.amazonaws.com/one-life/khalpar.jpg') center -100px no-repeat;
   background-size: 800px;
   display: block;
 }
 
 .community-header#kantapakur{
-  background: url('kantapakur-bg.jpg') center -100px no-repeat;
+  background: url('https://s3.amazonaws.com/one-life/kantapakur-bg.jpg') center -100px no-repeat;
   background-size: 800px;
   display: block;
 }
 
 .community-header#gaborda{
-  background: url('gaborda.jpg') center -80px no-repeat;
+  background: url('https://s3.amazonaws.com/one-life/gaborda.jpg') center -80px no-repeat;
   background-size: 800px;
   display: block;
 }
 
 .community-header#nalpur{
-  background: url('nalpur.jpg') center -150px no-repeat;
+  background: url('https://s3.amazonaws.com/one-life/nalpur.jpg') center -150px no-repeat;
   background-size: 800px;
   display: block;
 }
