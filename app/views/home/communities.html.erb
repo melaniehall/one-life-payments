@@ -52,7 +52,7 @@
     $('.communities-link').addClass('active');
 
     handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    handler.buildMap({ provider: {scrollwheel: false}, internal: {id: 'map'}}, function(){
     markers = handler.addMarkers([
     {
       "lat": 22.577360,
@@ -62,7 +62,7 @@
         "width":  36,
         "height": 36
       },
-      "infowindow": "Khalpar"
+      "infowindow": "<h3 class='community-info-window red'>Khalpar</h3><p style='font-size:16px;' class='community-info-link'>Click <a href='/communities/khalpar' style='font-size: 16px; color: #222; text-decoration: underline;' class='community-info-link'>here</a> to learn more.</p>"
     },
     {
       "lat": 22.457883,
@@ -72,8 +72,7 @@
         "width":  36,
         "height": 36
       },
-      "infowindow": "Kantapakur",
-      "scrollwheel": false
+      "infowindow": "<h3 class='community-info-window red'>Kantapakur</h3><p style='font-size:16px;' class='community-info-link'>Click <a href='/communities/kantapakur' style='font-size: 16px; color: #222; text-decoration: underline;' class='community-info-link'>here</a> to learn more.</p>"
     },
     {
       "lat": 22.540430,
@@ -83,7 +82,7 @@
         "width":  36,
         "height": 36
       },
-      "infowindow": "Nalpur"
+      "infowindow": "<h3 class='community-info-window red'>Nalpur</h3><p style='font-size:16px;' class='community-info-link'>Click <a href='/communities/nalpur' style='font-size: 16px; color: #222; text-decoration: underline;' class='community-info-link'>here</a> to learn more.</p>"
     },
     {
       "lat": 22.710047,
@@ -93,12 +92,12 @@
         "width":  36,
         "height": 36
       },
-      "infowindow": "Gaborda"
+      "infowindow": "<h3 class='community-info-window red'>Gaborda</h3><p style='font-size:16px;' class='community-info-link'>Click <a href='/communities/gaborda' style='font-size: 16px; color: #222; text-decoration: underline;' class='community-info-link'>here</a> to learn more.</p>"
     }
-  ]);
-  handler.bounds.extendWith(markers);
-  handler.fitMapToBounds();
-});
-
+    ]);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
   });
+  });
+
 </script>

@@ -82,6 +82,12 @@ p.small{
         border: none;
 }
 
+a.community-info-link, p.community-info-link,
+.gm-style .gm-style-iw a.community-info-link{
+  font-size: 16px;
+  line-height: 18px;
+}
+
 .community-thumb{
   text-align: center;
   border: solid 5px transparent;
