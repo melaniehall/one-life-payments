@@ -74,7 +74,7 @@ a.red:hover{
 }
 
 .hero-block#home{
-  background: url('closeup-girl.png') #FFF no-repeat left -160px;
+  background: url('https://s3.amazonaws.com/one-life/closeup-girl.jpg') #FFF no-repeat left -160px;
   background-size: 1820px
 }
 
@@ -288,7 +288,7 @@ a.side-nav-link:hover{
     height: 600px;
   }
    .hero-block#home{
-    background: url('closeup-girl.png') #FFF no-repeat left -160px;
+    background: url('https://s3.amazonaws.com/one-life/closeup-girl.jpg') #FFF no-repeat left -160px;
     background-size: 1520px
   }
 }
@@ -298,7 +298,7 @@ a.side-nav-link:hover{
     height: 500px;
   }
    .hero-block#home{
-    background: url('closeup-girl.png') #FFF no-repeat left -140px;
+    background: url('https://s3.amazonaws.com/one-life/closeup-girl.jpg') #FFF no-repeat left -140px;
     background-size: 1260px
   }
 }
@@ -316,7 +316,7 @@ a.side-nav-link:hover{
     margin-top: 90px;
   }
    .hero-block#home{
-    background: url('closeup-girl.png') #FFF no-repeat left -120px;
+    background: url('https://s3.amazonaws.com/one-life/closeup-girl.jpg') #FFF no-repeat left -120px;
     background-size: 1060px
   }
 }
@@ -327,7 +327,7 @@ a.side-nav-link:hover{
   }
 
   .hero-block#home{
-    background: url('closeup-girl.png') #FFF no-repeat left -80px;
+    background: url('https://s3.amazonaws.com/one-life/closeup-girl.jpg') #FFF no-repeat left -80px;
     background-size: 900px
   }
 
@@ -344,7 +344,7 @@ a.side-nav-link:hover{
   }
 
   .hero-block#home{
-    background: url('closeup-girl.png') #FFF no-repeat left -40px;
+    background: url('https://s3.amazonaws.com/one-life/closeup-girl.jpg') #FFF no-repeat left -40px;
     background-size: 550px
   }
 
