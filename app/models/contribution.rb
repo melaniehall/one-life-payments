@@ -25,6 +25,7 @@ class Contribution < ActiveRecord::Base
       :amount => amount_cents,
       :currency => "usd",
       :description => self.email,
+      :receipt_email => self.email,
       :metadata => {
         :first_name => self.first_name,
         :last_name => self.last_name,
@@ -62,6 +63,7 @@ class Contribution < ActiveRecord::Base
       customer = Stripe::Customer.create(
         :card => stripe_token,
         :description => self.email,
+        :email => self.email,
         :metadata => {
           :first_name => self.first_name,
           :last_name => self.last_name,
@@ -87,7 +89,8 @@ class Contribution < ActiveRecord::Base
       :interval => 'month',
       :name => name,
       :currency => 'usd',
-      :id => id_name
+      :id => id_name,
+      :statement_description => 'Monthly gift'
     )
     rescue Stripe::InvalidRequestError => e
       unless e.message.include? "Plan already exists"
