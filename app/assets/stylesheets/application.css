@@ -126,7 +126,7 @@ p.alert, p.notice{
   font-weight: 200;
   font-size: 20px;
   line-height: 24px;
-  max-width: 45%;
+  max-width: 50%;
 }
 
 .strike-border {
@@ -259,6 +259,10 @@ a.side-nav-link:hover{
   .sidebar-navigation{
     display: none;
   }
+
+  .strike-border h2{
+    font-size: 28px;
+  }
 }
 
 @media(max-width: 680px){
@@ -352,6 +356,11 @@ a.side-nav-link:hover{
     display: none;
   }
   .strike-border{
+    margin-top: 5px;
+  }
+
+  .strike-border h2{
+    font-size: 28px;
     margin-top: 5px;
   }
 

@@ -22,7 +22,7 @@
 #contribution_amount{
   background: url('usd.png') no-repeat right center;
   background-size: auto;
-  background-position: right 1.75px;
+  background-position: right 7px;
 }
 
 body{
@@ -126,7 +126,7 @@ body{
 #contribution-new input[type=text],
 input#contribution_gift_designation,
 input#contribution_email{
-  height: 38px;
+  height: 45px;
   margin-bottom: 8px;
 }
 
@@ -189,6 +189,11 @@ abbr{
 #thank-you-block{
   margin-top: 100px;
   text-align: center;
+}
+
+#thank-you-block p{
+  max-width: 85%;
+  margin: 0px auto;
 }
 
 #contribution-new #errorExplanation h2,
@@ -272,6 +277,12 @@ abbr{
   .page-header-block h1{
     font-size: 25px;
     line-height: 1.25em;
+  }
+
+
+  #thank-you-block p{
+    max-width: 95%;
+    margin: 0px auto;
   }
 }
 
